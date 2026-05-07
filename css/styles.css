@@ -129,14 +129,19 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   font-size: 1.05rem;
 }
 .logo-mark {
-  width: 38px; height: 38px;
+  width: 42px; height: 42px;
   border-radius: 10px;
-  background: linear-gradient(135deg, #fff, #aaa);
+  overflow: hidden;
   display: grid; place-items: center;
-  color: #000;
-  font-weight: 900;
-  font-size: 0.95rem;
-  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.2), 0 8px 24px rgba(255,255,255,0.08);
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(255,255,255,0.10);
+  border: 1px solid var(--line-strong);
+  flex-shrink: 0;
+}
+.logo-mark img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
 }
 .logo span small {
   display: block;
@@ -190,8 +195,29 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
    HERO
    ============================================================ */
 .hero {
-  padding: 88px 24px 72px;
+  padding: 120px 24px 88px;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  z-index: -2;
+  opacity: 0.42;
+  filter: grayscale(100%) contrast(1.05) brightness(0.85);
+}
+.hero-video-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(80% 60% at 50% 40%, transparent 0%, rgba(5,5,5,0.55) 60%, rgba(5,5,5,0.92) 100%),
+    linear-gradient(180deg, rgba(5,5,5,0.45) 0%, rgba(5,5,5,0.75) 100%);
+  backdrop-filter: blur(2px);
 }
 .hero-eyebrow {
   display: inline-flex; align-items: center; gap: 8px;
