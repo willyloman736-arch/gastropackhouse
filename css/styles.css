@@ -428,9 +428,21 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   box-shadow: var(--shadow-md);
   background: var(--glass-strong);
 }
-.product-card:focus-visible {
+.product-card:focus-within {
   outline: 2px solid #ffcd57;
   outline-offset: 4px;
+}
+.product-card-main {
+  width: 100%;
+  min-width: 0;
+  color: inherit;
+  text-align: left;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+.product-card-main:focus-visible {
+  outline: none;
 }
 .product-thumb {
   aspect-ratio: 3 / 4;
@@ -506,12 +518,12 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   z-index: 2;
 }
 .product-card:hover .product-view,
-.product-card:focus-visible .product-view {
+.product-card:focus-within .product-view {
   opacity: 1;
   transform: translateY(0);
 }
 .product-body {
-  padding: 16px 16px 18px;
+  padding: 16px 16px 10px;
   display: flex;
   flex-direction: column;
   gap: 6px;
@@ -538,6 +550,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 .product-foot {
   margin-top: auto;
+  padding: 0 16px 18px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1050,9 +1063,10 @@ body.age-gate-open { overflow: hidden; }
   position: fixed;
   inset: 0;
   z-index: 200;
-  display: grid;
-  place-items: center;
-  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
   background:
     radial-gradient(700px 520px at 50% 20%, rgba(255,205,87,0.16), transparent 70%),
     rgba(0,0,0,0.88);
@@ -1060,7 +1074,7 @@ body.age-gate-open { overflow: hidden; }
   -webkit-backdrop-filter: blur(22px) saturate(140%);
 }
 .age-gate-card {
-  width: min(100%, 480px);
+  width: min(480px, calc(100% - 32px));
   padding: 34px;
   text-align: center;
   border-radius: var(--radius-md);
@@ -1133,10 +1147,15 @@ body.age-gate-open { overflow: hidden; }
   .cart-thumb { width: 64px; height: 64px; }
   .qty, .cart-remove { grid-column: 1 / -1; justify-self: start; }
   .age-gate-card { padding: 28px 22px; }
+  .age-gate-card h2 { font-size: clamp(1.8rem, 7.2vw, 3.1rem); }
   .age-gate-actions { flex-direction: column; }
   .product-view { opacity: 1; transform: none; }
   .product-modal { padding: 12px; }
-  .product-modal-panel { max-height: calc(100vh - 24px); border-radius: var(--radius-md); }
+  .product-modal-panel {
+    width: calc(100vw - 24px);
+    max-height: calc(100vh - 24px);
+    border-radius: var(--radius-md);
+  }
   .product-modal-gallery { padding: 12px; }
   .product-modal-info { padding: 28px 18px 22px; }
   .product-modal-actions .btn { width: 100%; justify-content: center; }

@@ -145,16 +145,19 @@ function renderProducts() {
     : PRODUCTS.filter(p => p.cat === activeCat);
 
   grid.innerHTML = list.map(p => `
-    <article class="product-card" data-id="${p.id}" data-view="${p.id}" role="button" tabindex="0" aria-label="View ${escapeHtml(p.name)}">
-      <div class="product-thumb">
-        <span class="product-stock">${escapeHtml(p.stock)}</span>
-        ${productVisual(p)}
-        <span class="product-view">View</span>
+    <article class="product-card" data-id="${p.id}">
+      <div class="product-card-main" data-view="${p.id}" role="button" tabindex="0" aria-label="View ${escapeHtml(p.name)}">
+        <div class="product-thumb">
+          <span class="product-stock">${escapeHtml(p.stock)}</span>
+          ${productVisual(p)}
+          <span class="product-view">View</span>
+        </div>
+        <div class="product-body">
+          <span class="product-cat">${escapeHtml(categoryName(p.cat))}</span>
+          <h3 class="product-name">${escapeHtml(p.name)}</h3>
+          <span class="product-meta">MOQ · ${escapeHtml(p.moq)}</span>
+        </div>
       </div>
-      <div class="product-body">
-        <span class="product-cat">${escapeHtml(categoryName(p.cat))}</span>
-        <h3 class="product-name">${escapeHtml(p.name)}</h3>
-        <span class="product-meta">MOQ · ${escapeHtml(p.moq)}</span>
         <div class="product-foot">
           <span class="product-price">${formatMoney(p.price)}<span class="unit">${escapeHtml(p.unit)}</span></span>
           <button class="btn-add" data-add="${p.id}">
@@ -162,7 +165,6 @@ function renderProducts() {
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12h14M12 5v14"/></svg>
           </button>
         </div>
-      </div>
     </article>
   `).join('');
 
@@ -357,7 +359,11 @@ function bindBurger() {
   const burger = document.getElementById('burger');
   const links  = document.getElementById('nav-links');
   if (!burger || !links) return;
-  burger.addEventListener('click', () => links.classList.toggle('is-open'));
+  burger.addEventListener('click', () => {
+    const isOpen = links.classList.toggle('is-open');
+    burger.setAttribute('aria-expanded', String(isOpen));
+    burger.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+  });
 }
 
 // ---------- Footer year ----------
