@@ -55,6 +55,15 @@ function productVisual(p) {
   return `<img class="product-image" src="${escapeHtml(p.image)}" alt="${escapeHtml(p.name)}" loading="lazy">`;
 }
 
+function productImages(p) {
+  const images = Array.isArray(p.images) && p.images.length ? p.images : [p.image];
+  return [...new Set(images.filter(Boolean))];
+}
+
+function categoryName(id) {
+  return (CATEGORIES.find(c => c.id === id) || {}).name || '';
+}
+
 // ---------- Product Icons (SVG by category) ----------
 const ICONS = {
   takeaway: `<svg viewBox="0 0 100 100" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
@@ -135,16 +144,15 @@ function renderProducts() {
     ? PRODUCTS
     : PRODUCTS.filter(p => p.cat === activeCat);
 
-  const catLabel = id => (CATEGORIES.find(c => c.id === id) || {}).name || '';
-
   grid.innerHTML = list.map(p => `
-    <article class="product-card" data-id="${p.id}">
+    <article class="product-card" data-id="${p.id}" data-view="${p.id}" role="button" tabindex="0" aria-label="View ${escapeHtml(p.name)}">
       <div class="product-thumb">
         <span class="product-stock">${escapeHtml(p.stock)}</span>
         ${productVisual(p)}
+        <span class="product-view">View</span>
       </div>
       <div class="product-body">
-        <span class="product-cat">${escapeHtml(catLabel(p.cat))}</span>
+        <span class="product-cat">${escapeHtml(categoryName(p.cat))}</span>
         <h3 class="product-name">${escapeHtml(p.name)}</h3>
         <span class="product-meta">MOQ · ${escapeHtml(p.moq)}</span>
         <div class="product-foot">
@@ -160,6 +168,7 @@ function renderProducts() {
 
   grid.querySelectorAll('[data-add]').forEach(btn => {
     btn.addEventListener('click', e => {
+      e.stopPropagation();
       const id = +btn.dataset.add;
       addToCart(id);
       btn.classList.add('is-added');
@@ -172,6 +181,126 @@ function renderProducts() {
       }, 1400);
     });
   });
+
+  grid.querySelectorAll('[data-view]').forEach(card => {
+    const id = +card.dataset.view;
+    card.addEventListener('click', () => openProductModal(id));
+    card.addEventListener('keydown', e => {
+      if (e.key !== 'Enter' && e.key !== ' ') return;
+      e.preventDefault();
+      openProductModal(id);
+    });
+  });
+}
+
+// ---------- Product detail modal ----------
+function ensureProductModal() {
+  let modal = document.getElementById('product-modal');
+  if (modal) return modal;
+
+  modal = document.createElement('div');
+  modal.id = 'product-modal';
+  modal.className = 'product-modal';
+  modal.setAttribute('role', 'dialog');
+  modal.setAttribute('aria-modal', 'true');
+  modal.setAttribute('aria-labelledby', 'product-modal-title');
+  document.body.appendChild(modal);
+  return modal;
+}
+
+function productHash(p) {
+  return `#product-${encodeURIComponent(p.slug)}`;
+}
+
+function openProductModal(id, syncHash = true) {
+  const p = PRODUCTS.find(product => product.id === id);
+  if (!p) return;
+
+  const modal = ensureProductModal();
+  const images = productImages(p);
+  const mainImage = images[0];
+  const thumbs = images.map((image, index) => `
+    <button class="product-modal-thumb ${index === 0 ? 'is-active' : ''}" data-gallery-image="${escapeHtml(image)}" aria-label="Show image ${index + 1} for ${escapeHtml(p.name)}">
+      <img src="${escapeHtml(image)}" alt="${escapeHtml(p.name)} image ${index + 1}" loading="lazy">
+    </button>
+  `).join('');
+
+  modal.innerHTML = `
+    <div class="product-modal-backdrop" data-product-close></div>
+    <div class="product-modal-panel">
+      <button class="product-modal-close" data-product-close aria-label="Close product view">×</button>
+      <div class="product-modal-gallery">
+        <div class="product-modal-main">
+          <img src="${escapeHtml(mainImage)}" alt="${escapeHtml(p.name)}" data-product-main-image>
+        </div>
+        <div class="product-modal-thumbs">${thumbs}</div>
+      </div>
+      <div class="product-modal-info">
+        <span class="product-cat">${escapeHtml(categoryName(p.cat))}</span>
+        <h2 id="product-modal-title">${escapeHtml(p.name)}</h2>
+        <div class="product-modal-price">${formatMoney(p.price)}<span>${escapeHtml(p.unit)}</span></div>
+        <div class="product-modal-meta">
+          <span>${escapeHtml(p.stock)}</span>
+          <span>MOQ ${escapeHtml(p.moq)}</span>
+        </div>
+        <p>Wholesale availability and pricing are ready for quote review.</p>
+        <div class="product-modal-actions">
+          <button class="btn btn-primary" data-modal-add="${p.id}">Add to Cart</button>
+          <a class="btn btn-ghost" href="https://t.me/Barewood" target="_blank" rel="noopener noreferrer">Telegram Wholesale</a>
+        </div>
+      </div>
+    </div>
+  `;
+
+  document.body.classList.add('product-modal-open');
+  modal.classList.add('is-open');
+
+  modal.querySelectorAll('[data-product-close]').forEach(el => {
+    el.addEventListener('click', () => closeProductModal());
+  });
+
+  modal.querySelectorAll('[data-gallery-image]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const nextImage = btn.dataset.galleryImage;
+      const main = modal.querySelector('[data-product-main-image]');
+      if (main) main.src = nextImage;
+      modal.querySelectorAll('[data-gallery-image]').forEach(item => item.classList.remove('is-active'));
+      btn.classList.add('is-active');
+    });
+  });
+
+  const addButton = modal.querySelector('[data-modal-add]');
+  if (addButton) {
+    addButton.addEventListener('click', () => {
+      addToCart(p.id);
+      toast(`Added · ${p.name}`);
+    });
+  }
+
+  if (syncHash && window.location.hash !== productHash(p)) {
+    window.history.pushState(null, '', productHash(p));
+  }
+}
+
+function closeProductModal(syncHash = true) {
+  const modal = document.getElementById('product-modal');
+  if (!modal) return;
+  modal.classList.remove('is-open');
+  modal.innerHTML = '';
+  document.body.classList.remove('product-modal-open');
+  if (syncHash && window.location.hash.startsWith('#product-')) {
+    window.history.pushState(null, '', `${window.location.pathname}${window.location.search}`);
+  }
+}
+
+function openProductFromHash() {
+  if (!window.location.hash.startsWith('#product-')) {
+    closeProductModal(false);
+    return;
+  }
+  const slug = decodeURIComponent(window.location.hash.replace('#product-', ''));
+  const product = PRODUCTS.find(p => p.slug === slug);
+  if (product) openProductModal(product.id, false);
 }
 
 // ---------- 21+ age gate ----------
@@ -245,4 +374,6 @@ document.addEventListener('DOMContentLoaded', () => {
   updateCartBadge();
   bindBurger();
   setYear();
+  openProductFromHash();
+  window.addEventListener('hashchange', openProductFromHash);
 });

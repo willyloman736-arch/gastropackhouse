@@ -1,5 +1,6 @@
 // Gastro Pack House - Product Catalog
 // Imported from Barewoods Wholesale on 2026-05-07.
+// Product galleries refreshed from detail pages on 2026-05-07.
 
 const CATEGORIES = [
   {
@@ -54,7 +55,11 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-01.37.52.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-01.37.52.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-01.37.52.jpeg",
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-01.37.53-1.jpeg"
+    ]
   },
   {
     "id": 2,
@@ -65,7 +70,11 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-01.38.38.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-01.38.38.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-01.38.38.jpeg",
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-01.38.38-1.jpeg"
+    ]
   },
   {
     "id": 3,
@@ -76,7 +85,11 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-01.39.40.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-01.39.40.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-01.39.40.jpeg",
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-01.39.40-1.jpeg"
+    ]
   },
   {
     "id": 4,
@@ -87,7 +100,11 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-01.40.24.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-01.40.24.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-01.40.24.jpeg",
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-01.40.24-1.jpeg"
+    ]
   },
   {
     "id": 5,
@@ -98,7 +115,11 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-01.42.25.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-01.42.25.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-01.42.25.jpeg",
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-01.42.26.jpeg"
+    ]
   },
   {
     "id": 6,
@@ -109,7 +130,10 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-03.05.04.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-03.05.04.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-03.05.04.jpeg"
+    ]
   },
   {
     "id": 7,
@@ -120,7 +144,11 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-29-at-16.37.57.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-29-at-16.37.57.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-29-at-16.37.57.jpeg",
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-29-at-16.37.57-1.jpeg"
+    ]
   },
   {
     "id": 8,
@@ -131,7 +159,11 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-01.23.40-1.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-01.23.40-1.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-01.23.40-1.jpeg",
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-01.23.40.jpeg"
+    ]
   },
   {
     "id": 9,
@@ -142,7 +174,11 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-01.17.01-1.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-01.17.01-1.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-01.17.01-1.jpeg",
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-01.17.01-1-1.jpeg"
+    ]
   },
   {
     "id": 10,
@@ -153,7 +189,10 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-01.29.40.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-01.29.40.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-01.29.40.jpeg"
+    ]
   },
   {
     "id": 11,
@@ -164,7 +203,10 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-22-at-21.35.11-1.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-22-at-21.35.11-1.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-22-at-21.35.11-1.jpeg"
+    ]
   },
   {
     "id": 12,
@@ -175,7 +217,11 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-22-at-21.37.51.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-22-at-21.37.51.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-22-at-21.37.51.jpeg",
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-22-at-21.37.51-1.jpeg"
+    ]
   },
   {
     "id": 13,
@@ -186,7 +232,11 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-30-at-03.26.28-1.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-30-at-03.26.28-1.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-30-at-03.26.28-1.jpeg",
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-30-at-03.26.28.jpeg"
+    ]
   },
   {
     "id": 14,
@@ -197,7 +247,11 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-30-at-03.29.57-2.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-30-at-03.29.57-2.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-30-at-03.29.57-2.jpeg",
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-30-at-03.29.57.jpeg"
+    ]
   },
   {
     "id": 15,
@@ -208,7 +262,11 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-30-at-03.40.15-1.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-30-at-03.40.15-1.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-30-at-03.40.15-1.jpeg",
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-30-at-03.40.15.jpeg"
+    ]
   },
   {
     "id": 16,
@@ -219,7 +277,10 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-29-at-17.38.10-1.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-29-at-17.38.10-1.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-29-at-17.38.10-1.jpeg"
+    ]
   },
   {
     "id": 17,
@@ -230,7 +291,10 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-22-at-22.18.52-1.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-22-at-22.18.52-1.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-22-at-22.18.52-1.jpeg"
+    ]
   },
   {
     "id": 18,
@@ -241,7 +305,11 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-30-at-01.35.15-1.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-30-at-01.35.15-1.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-30-at-01.35.15-1.jpeg",
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-30-at-01.35.15.jpeg"
+    ]
   },
   {
     "id": 19,
@@ -252,7 +320,11 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-30-at-01.46.19-1.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-30-at-01.46.19-1.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-30-at-01.46.19-1.jpeg",
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-30-at-01.46.19.jpeg"
+    ]
   },
   {
     "id": 20,
@@ -263,7 +335,11 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-01.14.15-1.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-01.14.15-1.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-01.14.15-1.jpeg",
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-01.14.14-2.jpeg"
+    ]
   },
   {
     "id": 21,
@@ -274,7 +350,11 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-30-at-01.55.47.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-30-at-01.55.47.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-30-at-01.55.47.jpeg",
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-30-at-01.55.47-1.jpeg"
+    ]
   },
   {
     "id": 22,
@@ -285,7 +365,11 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-30-at-01.58.29.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-30-at-01.58.29.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-30-at-01.58.29.jpeg",
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-30-at-01.58.30.jpeg"
+    ]
   },
   {
     "id": 23,
@@ -296,7 +380,11 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-30-at-02.03.25.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-30-at-02.03.25.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-30-at-02.03.25.jpeg",
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-30-at-02.03.26.jpeg"
+    ]
   },
   {
     "id": 24,
@@ -307,7 +395,11 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-01.30.18-1.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-01.30.18-1.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-01.30.18-1.jpeg",
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-01.30.19-1.jpeg"
+    ]
   },
   {
     "id": 25,
@@ -318,7 +410,11 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-30-at-02.10.49.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-30-at-02.10.49.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-30-at-02.10.49.jpeg",
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-30-at-02.10.49-1.jpeg"
+    ]
   },
   {
     "id": 26,
@@ -329,7 +425,11 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-30-at-02.13.40.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-30-at-02.13.40.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-30-at-02.13.40.jpeg",
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-30-at-02.13.40-1.jpeg"
+    ]
   },
   {
     "id": 27,
@@ -340,7 +440,11 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-30-at-00.33.51.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-30-at-00.33.51.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-30-at-00.33.51.jpeg",
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-30-at-00.33.52.jpeg"
+    ]
   },
   {
     "id": 28,
@@ -351,7 +455,11 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-30-at-02.16.52.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-30-at-02.16.52.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-30-at-02.16.52.jpeg",
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-30-at-02.16.53.jpeg"
+    ]
   },
   {
     "id": 29,
@@ -362,7 +470,11 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-29-at-23.32.26-2.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-29-at-23.32.26-2.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-29-at-23.32.26-2.jpeg",
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-29-at-23.32.26-1.jpeg"
+    ]
   },
   {
     "id": 30,
@@ -373,7 +485,11 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-29-at-23.29.22-1.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-29-at-23.29.22-1.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-29-at-23.29.22-1.jpeg",
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-29-at-23.29.22.jpeg"
+    ]
   },
   {
     "id": 31,
@@ -384,7 +500,10 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-29-at-23.37.42-1-1.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-29-at-23.37.42-1-1.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-29-at-23.37.42-1-1.jpeg"
+    ]
   },
   {
     "id": 32,
@@ -395,7 +514,11 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-29-at-22.43.21.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-29-at-22.43.21.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-29-at-22.43.21.jpeg",
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-29-at-22.43.21-1.jpeg"
+    ]
   },
   {
     "id": 33,
@@ -406,7 +529,10 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-03.04.18.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-03.04.18.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-03.04.18.jpeg"
+    ]
   },
   {
     "id": 34,
@@ -417,7 +543,11 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-30-at-02.23.13.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-30-at-02.23.13.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-30-at-02.23.13.jpeg",
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-30-at-02.23.13-1-1.jpeg"
+    ]
   },
   {
     "id": 35,
@@ -428,7 +558,11 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-31-at-05.38.10.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-31-at-05.38.10.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-31-at-05.38.10.jpeg",
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-31-at-05.38.11.jpeg"
+    ]
   },
   {
     "id": 36,
@@ -439,7 +573,11 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-31-at-05.34.17-1.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-31-at-05.34.17-1.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-31-at-05.34.17-1.jpeg",
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-31-at-05.34.17.jpeg"
+    ]
   },
   {
     "id": 37,
@@ -450,7 +588,11 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-31-at-05.28.53-1.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-31-at-05.28.53-1.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-31-at-05.28.53-1.jpeg",
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-31-at-05.28.53.jpeg"
+    ]
   },
   {
     "id": 38,
@@ -461,7 +603,11 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-31-at-05.05.44.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-31-at-05.05.44.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-31-at-05.05.44.jpeg",
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-31-at-05.05.45.jpeg"
+    ]
   },
   {
     "id": 39,
@@ -472,7 +618,11 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-03.05.29.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-03.05.29.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-03.05.29.jpeg",
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-03.05.29-1.jpeg"
+    ]
   },
   {
     "id": 40,
@@ -483,7 +633,11 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-29-at-18.10.34.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-29-at-18.10.34.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-29-at-18.10.34.jpeg",
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-29-at-17.38.10.jpeg"
+    ]
   },
   {
     "id": 41,
@@ -494,7 +648,11 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-30-at-03.22.11-1.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-30-at-03.22.11-1.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-30-at-03.22.11-1.jpeg",
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-30-at-03.22.11.jpeg"
+    ]
   },
   {
     "id": 42,
@@ -505,7 +663,11 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-30-at-03.17.45-1.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-30-at-03.17.45-1.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-30-at-03.17.45-1.jpeg",
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-30-at-03.17.45.jpeg"
+    ]
   },
   {
     "id": 43,
@@ -516,7 +678,11 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-22-at-21.29.45.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-22-at-21.29.45.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-22-at-21.29.45.jpeg",
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-22-at-21.29.45-1.jpeg"
+    ]
   },
   {
     "id": 44,
@@ -527,7 +693,11 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-30-at-03.34.18.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-30-at-03.34.18.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-30-at-03.34.18.jpeg",
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-30-at-03.34.17.jpeg"
+    ]
   },
   {
     "id": 45,
@@ -538,7 +708,11 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-29-at-23.22.37.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-29-at-23.22.37.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-29-at-23.22.37.jpeg",
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-29-at-23.22.36.jpeg"
+    ]
   },
   {
     "id": 46,
@@ -549,7 +723,11 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-29-at-23.26.54.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-29-at-23.26.54.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-29-at-23.26.54.jpeg",
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-29-at-23.26.54-1.jpeg"
+    ]
   },
   {
     "id": 47,
@@ -560,7 +738,10 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-22-at-22.28.46.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-22-at-22.28.46.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-22-at-22.28.46.jpeg"
+    ]
   },
   {
     "id": 48,
@@ -571,7 +752,10 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-02.54.06-1.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-02.54.06-1.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-02.54.06-1.jpeg"
+    ]
   },
   {
     "id": 49,
@@ -582,7 +766,11 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-22-at-22.31.12.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-22-at-22.31.12.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-22-at-22.31.12.jpeg",
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-22-at-22.31.12-1.jpeg"
+    ]
   },
   {
     "id": 50,
@@ -593,7 +781,10 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-22-at-22.35.46.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-22-at-22.35.46.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-22-at-22.35.46.jpeg"
+    ]
   },
   {
     "id": 51,
@@ -604,7 +795,10 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-03.02.08.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-03.02.08.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-03.02.08.jpeg"
+    ]
   },
   {
     "id": 52,
@@ -615,7 +809,11 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-29-at-23.14.16.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-29-at-23.14.16.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-29-at-23.14.16.jpeg",
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-29-at-23.14.17.jpeg"
+    ]
   },
   {
     "id": 53,
@@ -626,7 +824,10 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-03.06.17.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-03.06.17.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-03.06.17.jpeg"
+    ]
   },
   {
     "id": 54,
@@ -637,7 +838,11 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-30-at-02.56.32-1.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-30-at-02.56.32-1.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-30-at-02.56.32-1.jpeg",
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-30-at-02.56.32.jpeg"
+    ]
   },
   {
     "id": 55,
@@ -648,7 +853,11 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-30-at-02.59.00.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-30-at-02.59.00.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-30-at-02.59.00.jpeg",
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-30-at-02.59.00-1.jpeg"
+    ]
   },
   {
     "id": 56,
@@ -659,7 +868,11 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-31-at-05.45.48.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-31-at-05.45.48.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-31-at-05.45.48.jpeg",
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-31-at-05.45.47.jpeg"
+    ]
   },
   {
     "id": 57,
@@ -670,7 +883,11 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-01.17.35.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-01.17.35.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-01.17.35.jpeg",
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-01.17.35-1.jpeg"
+    ]
   },
   {
     "id": 58,
@@ -681,7 +898,10 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-31-at-05.03.07-2.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-31-at-05.03.07-2.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-31-at-05.03.07-2.jpeg"
+    ]
   },
   {
     "id": 59,
@@ -692,7 +912,11 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-30-at-02.20.16.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-30-at-02.20.16.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-30-at-02.20.16.jpeg",
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-30-at-02.20.16-1.jpeg"
+    ]
   },
   {
     "id": 60,
@@ -703,7 +927,11 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-02.08.06-1.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-02.08.06-1.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-02.08.06-1.jpeg",
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-02.08.07.jpeg"
+    ]
   },
   {
     "id": 61,
@@ -714,7 +942,10 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-22-at-22.26.10-1.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-22-at-22.26.10-1.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-22-at-22.26.10-1.jpeg"
+    ]
   },
   {
     "id": 62,
@@ -725,7 +956,10 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-22-at-22.27.53.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-22-at-22.27.53.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-22-at-22.27.53.jpeg"
+    ]
   },
   {
     "id": 63,
@@ -736,7 +970,10 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-02.56.48.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-02.56.48.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-02.56.48.jpeg"
+    ]
   },
   {
     "id": 64,
@@ -747,7 +984,10 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-22-at-22.45.05.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-22-at-22.45.05.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-22-at-22.45.05.jpeg"
+    ]
   },
   {
     "id": 65,
@@ -758,7 +998,10 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-22-at-22.50.10.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-22-at-22.50.10.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-22-at-22.50.10.jpeg"
+    ]
   },
   {
     "id": 66,
@@ -769,7 +1012,10 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-22-at-22.27.20.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-22-at-22.27.20.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-22-at-22.27.20.jpeg"
+    ]
   },
   {
     "id": 67,
@@ -780,7 +1026,11 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-01.14.14.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-01.14.14.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-01.14.14.jpeg",
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-01.14.15.jpeg"
+    ]
   },
   {
     "id": 68,
@@ -791,7 +1041,11 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-01.12.59.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-01.12.59.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-01.12.59.jpeg",
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-01.12.59-1.jpeg"
+    ]
   },
   {
     "id": 69,
@@ -802,7 +1056,11 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-01.27.32.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-01.27.32.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-01.27.32.jpeg",
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-01.27.33.jpeg"
+    ]
   },
   {
     "id": 70,
@@ -813,7 +1071,10 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-01.13.37.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-01.13.37.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-01.13.37.jpeg"
+    ]
   },
   {
     "id": 71,
@@ -824,7 +1085,11 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-31-at-05.49.46-1.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-31-at-05.49.46-1.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-31-at-05.49.46-1.jpeg",
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-31-at-05.49.46.jpeg"
+    ]
   },
   {
     "id": 72,
@@ -835,7 +1100,11 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-31-at-05.48.14-1.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-31-at-05.48.14-1.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-31-at-05.48.14-1.jpeg",
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-31-at-05.48.14.jpeg"
+    ]
   },
   {
     "id": 73,
@@ -846,7 +1115,11 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-31-at-05.44.08-1.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-31-at-05.44.08-1.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-31-at-05.44.08-1.jpeg",
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-31-at-05.44.08.jpeg"
+    ]
   },
   {
     "id": 74,
@@ -857,7 +1130,11 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-31-at-05.35.53.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-31-at-05.35.53.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-31-at-05.35.53.jpeg",
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-31-at-05.35.53-1.jpeg"
+    ]
   },
   {
     "id": 75,
@@ -868,7 +1145,11 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-31-at-05.32.24-1.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-31-at-05.32.24-1.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-31-at-05.32.24-1.jpeg",
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-31-at-05.32.24.jpeg"
+    ]
   },
   {
     "id": 76,
@@ -879,7 +1160,11 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-31-at-05.26.09-1.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-31-at-05.26.09-1.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-31-at-05.26.09-1.jpeg",
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-31-at-05.26.09.jpeg"
+    ]
   },
   {
     "id": 77,
@@ -890,7 +1175,11 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-31-at-05.20.30-1.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-31-at-05.20.30-1.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-31-at-05.20.30-1.jpeg",
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-31-at-05.20.30.jpeg"
+    ]
   },
   {
     "id": 78,
@@ -901,7 +1190,11 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-31-at-05.17.37.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-31-at-05.17.37.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-31-at-05.17.37.jpeg",
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-31-at-05.17.38.jpeg"
+    ]
   },
   {
     "id": 79,
@@ -912,7 +1205,11 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-31-at-05.10.29.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-31-at-05.10.29.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-31-at-05.10.29.jpeg",
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-31-at-05.10.30.jpeg"
+    ]
   },
   {
     "id": 80,
@@ -923,7 +1220,11 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-31-at-05.03.07-2.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-31-at-05.03.07-2.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-31-at-05.03.07-2.jpeg",
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-31-at-05.03.07-2-1.jpeg"
+    ]
   },
   {
     "id": 81,
@@ -934,7 +1235,11 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-02.59.35-1.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-02.59.35-1.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-02.59.35-1.jpeg",
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-02.59.35.jpeg"
+    ]
   },
   {
     "id": 82,
@@ -945,7 +1250,11 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-01.52.37.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-01.52.37.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-01.52.37.jpeg",
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-01.51.57.jpeg"
+    ]
   },
   {
     "id": 83,
@@ -956,7 +1265,10 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-31-at-05.08.34-1.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-31-at-05.08.34-1.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-31-at-05.08.34-1.jpeg"
+    ]
   },
   {
     "id": 84,
@@ -967,7 +1279,11 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-01.57.44-1.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-01.57.44-1.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-01.57.44-1.jpeg",
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-01.57.44-2.jpeg"
+    ]
   },
   {
     "id": 85,
@@ -978,7 +1294,10 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-31-at-05.08.34-1.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-31-at-05.08.34-1.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-31-at-05.08.34-1.jpeg"
+    ]
   },
   {
     "id": 86,
@@ -989,7 +1308,11 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-02.05.17.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-02.05.17.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-02.05.17.jpeg",
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-02.05.17-1.jpeg"
+    ]
   },
   {
     "id": 87,
@@ -1000,7 +1323,11 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-02.06.04.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-02.06.04.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-02.06.04.jpeg",
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-02.06.04-1.jpeg"
+    ]
   },
   {
     "id": 88,
@@ -1011,7 +1338,10 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-22-at-21.57.46.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-22-at-21.57.46.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-22-at-21.57.46.jpeg"
+    ]
   },
   {
     "id": 89,
@@ -1022,7 +1352,11 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-30-at-02.52.44-1.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-30-at-02.52.44-1.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-30-at-02.52.44-1.jpeg",
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-30-at-02.52.44-2.jpeg"
+    ]
   },
   {
     "id": 90,
@@ -1033,7 +1367,11 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-01.15.43.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-01.15.43.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-01.15.43.jpeg",
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-01.15.43-1.jpeg"
+    ]
   },
   {
     "id": 91,
@@ -1044,7 +1382,10 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-01.16.20.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-01.16.20.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-01.16.20.jpeg"
+    ]
   },
   {
     "id": 92,
@@ -1055,7 +1396,11 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-31-at-05.42.04.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-31-at-05.42.04.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-31-at-05.42.04.jpeg",
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-31-at-05.42.04-1.jpeg"
+    ]
   },
   {
     "id": 93,
@@ -1066,7 +1411,11 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-31-at-05.24.08-1.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-31-at-05.24.08-1.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-31-at-05.24.08-1.jpeg",
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-31-at-05.24.08.jpeg"
+    ]
   },
   {
     "id": 94,
@@ -1077,7 +1426,11 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-31-at-05.16.00.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-31-at-05.16.00.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-31-at-05.16.00.jpeg",
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-31-at-05.16.00-1.jpeg"
+    ]
   },
   {
     "id": 95,
@@ -1088,7 +1441,11 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-31-at-05.13.06.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-31-at-05.13.06.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-31-at-05.13.06.jpeg",
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-31-at-05.13.07.jpeg"
+    ]
   },
   {
     "id": 96,
@@ -1099,7 +1456,11 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-31-at-05.08.34-1.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-31-at-05.08.34-1.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-31-at-05.08.34-1.jpeg",
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-31-at-05.08.34.jpeg"
+    ]
   },
   {
     "id": 97,
@@ -1110,7 +1471,11 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-22-at-22.36.07.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-22-at-22.36.07.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-22-at-22.36.07.jpeg",
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-22-at-22.36.06.jpeg"
+    ]
   },
   {
     "id": 98,
@@ -1121,7 +1486,11 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-22-at-22.36.07.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-22-at-22.36.07.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-22-at-22.36.07.jpeg",
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-22-at-22.36.06.jpeg"
+    ]
   },
   {
     "id": 99,
@@ -1132,7 +1501,11 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-01.21.43.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-01.21.43.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-01.21.43.jpeg",
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-01.21.43-1.jpeg"
+    ]
   },
   {
     "id": 100,
@@ -1143,7 +1516,11 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-01.28.34-1.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-01.28.34-1.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-01.28.34-1.jpeg",
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-27-at-01.28.34.jpeg"
+    ]
   },
   {
     "id": 101,
@@ -1154,6 +1531,9 @@ const PRODUCTS = [
     "unit": "/lb",
     "stock": "In Stock",
     "moq": "1 lb",
-    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-30-at-03.42.29.jpeg"
+    "image": "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-30-at-03.42.29.jpeg",
+    "images": [
+      "https://barewoodwholesale.com/images/products/WhatsApp-Image-2026-03-30-at-03.42.29.jpeg"
+    ]
   }
 ];
