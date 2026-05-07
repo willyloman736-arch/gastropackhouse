@@ -1112,6 +1112,67 @@ body.age-gate-open { overflow: hidden; }
   .hero { padding: 56px 20px 48px; }
   .section { padding: 56px 0; }
   .cta-band { padding: 44px 22px; }
+  .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+  .product-card {
+    border-radius: 14px;
+  }
+  .product-thumb {
+    aspect-ratio: 1 / 1.08;
+  }
+  .product-stock {
+    top: 8px;
+    left: 8px;
+    padding: 3px 7px;
+    font-size: 0.56rem;
+    letter-spacing: 0.08em;
+  }
+  .product-view {
+    right: 8px;
+    bottom: 8px;
+    padding: 4px 8px;
+    font-size: 0.58rem;
+  }
+  .product-body {
+    padding: 10px 10px 8px;
+    gap: 4px;
+  }
+  .product-cat {
+    font-size: 0.56rem;
+    letter-spacing: 0.08em;
+  }
+  .product-name {
+    font-size: 0.78rem;
+    line-height: 1.22;
+    min-height: 2.45em;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .product-meta {
+    font-size: 0.66rem;
+    margin-bottom: 8px;
+  }
+  .product-foot {
+    padding: 0 10px 12px;
+    gap: 6px;
+  }
+  .product-price {
+    font-size: 0.92rem;
+  }
+  .product-price .unit {
+    display: block;
+    margin-left: 0;
+    font-size: 0.58rem;
+  }
+  .btn-add {
+    padding: 7px 9px;
+    font-size: 0.68rem;
+    gap: 4px;
+  }
   .footer-grid { grid-template-columns: 1fr; }
   .cart-row { grid-template-columns: 64px 1fr; grid-auto-rows: auto; }
   .cart-thumb { width: 64px; height: 64px; }
