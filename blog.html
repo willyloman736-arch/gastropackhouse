@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Blog · Gastro Pack House</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<!-- ========== NAV ========== -->
+<header class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-mark">G</span>
+      <span>Gastro Pack House <small>Wholesale Packaging</small></span>
+    </a>
+    <button class="nav-burger" aria-label="Open menu" id="burger">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#products">Products</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="cart.html" class="cart-link">Cart <span class="badge" id="cart-count">0</span></a></li>
+      <li><a href="index.html#order" class="nav-cta">Order Bulk</a></li>
+    </ul>
+  </div>
+</header>
+
+<!-- ========== PAGE HEAD ========== -->
+<section class="page-head">
+  <span class="hero-eyebrow">Field Notes</span>
+  <h1>The Gastro Pack Journal</h1>
+  <p>Practical reads on food packaging, kitchen logistics, sustainability and the operational side of running a food brand.</p>
+</section>
+
+<!-- ========== BLOG GRID ========== -->
+<section class="section" style="padding-top:32px">
+  <div class="container">
+    <div class="blog-grid">
+
+      <article class="blog-card">
+        <div class="blog-thumb">
+          <svg viewBox="0 0 100 100" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round">
+            <path d="M22 38h56l-5 42a4 4 0 0 1-4 4H31a4 4 0 0 1-4-4z"/>
+            <path d="M18 32h64M30 24h40v8H30z" opacity=".7"/>
+          </svg>
+        </div>
+        <div class="blog-body">
+          <span class="blog-tag">Operations</span>
+          <h3>Choosing the right takeaway container for delivery aggregators</h3>
+          <p>Why heat-retention, leak resistance and stack-strength matter more than aesthetic when you're shipping 200 covers a night.</p>
+          <div class="blog-meta"><span>5 min read</span><span>Apr 2026</span></div>
+        </div>
+      </article>
+
+      <article class="blog-card">
+        <div class="blog-thumb">
+          <svg viewBox="0 0 100 100" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round">
+            <path d="M22 50c0-18 12-32 28-32s28 14 28 32-12 32-28 32S22 68 22 50z"/>
+            <path d="M50 18c-6 18 0 36 18 48" opacity=".5"/>
+          </svg>
+        </div>
+        <div class="blog-body">
+          <span class="blog-tag">Sustainability</span>
+          <h3>Bagasse vs PLA vs kraft — what actually composts</h3>
+          <p>A clear breakdown of the three most-marketed eco materials and which ones break down in commercial vs home composting.</p>
+          <div class="blog-meta"><span>7 min read</span><span>Mar 2026</span></div>
+        </div>
+      </article>
+
+      <article class="blog-card">
+        <div class="blog-thumb">
+          <svg viewBox="0 0 100 100" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round">
+            <path d="M18 30h64v50H18z"/>
+            <path d="M18 30l10-12h44l10 12M50 18v62" opacity=".4"/>
+          </svg>
+        </div>
+        <div class="blog-body">
+          <span class="blog-tag">Branding</span>
+          <h3>Custom-printed kraft boxes on a small-batch budget</h3>
+          <p>What it actually costs to print your logo on 1,000 pizza boxes — including artwork, plate fees, lead times and storage.</p>
+          <div class="blog-meta"><span>6 min read</span><span>Mar 2026</span></div>
+        </div>
+      </article>
+
+      <article class="blog-card">
+        <div class="blog-thumb">
+          <svg viewBox="0 0 100 100" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round">
+            <ellipse cx="50" cy="32" rx="28" ry="6"/>
+            <path d="M22 32l4 46a4 4 0 0 0 4 4h40a4 4 0 0 0 4-4l4-46"/>
+          </svg>
+        </div>
+        <div class="blog-body">
+          <span class="blog-tag">Cost Control</span>
+          <h3>How a 24oz container saves $0.04 over a 32oz — and when it doesn't</h3>
+          <p>Sizing math for cloud kitchens. We break down portion-to-pack ratios, fill-height economics and the hidden cost of over-spec.</p>
+          <div class="blog-meta"><span>4 min read</span><span>Feb 2026</span></div>
+        </div>
+      </article>
+
+      <article class="blog-card">
+        <div class="blog-thumb">
+          <svg viewBox="0 0 100 100" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round">
+            <path d="M28 26h44l-4 56a4 4 0 0 1-4 4H36a4 4 0 0 1-4-4z"/>
+            <path d="M28 26h44M72 38h6a8 8 0 0 1 0 16h-5" opacity=".7"/>
+          </svg>
+        </div>
+        <div class="blog-body">
+          <span class="blog-tag">Coffee</span>
+          <h3>Double-wall vs ripple cups: a hands-on heat test</h3>
+          <p>We poured 90°C espresso into both and tracked surface temperature for 25 minutes. Here's what we found and what it means for cafés.</p>
+          <div class="blog-meta"><span>5 min read</span><span>Feb 2026</span></div>
+        </div>
+      </article>
+
+      <article class="blog-card">
+        <div class="blog-thumb">
+          <svg viewBox="0 0 100 100" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round">
+            <rect x="14" y="36" width="72" height="44" rx="3"/>
+            <path d="M14 48h72M22 28h56" opacity=".6"/>
+          </svg>
+        </div>
+        <div class="blog-body">
+          <span class="blog-tag">Catering</span>
+          <h3>Building a 200-cover catering pack list (and what to skip)</h3>
+          <p>The exact line-list our catering customers reorder every quarter — trays, sternos, lids, sleeves, utensils — with quantities.</p>
+          <div class="blog-meta"><span>8 min read</span><span>Jan 2026</span></div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">
+          <span class="logo-mark">G</span>
+          <span>Gastro Pack House <small>Wholesale Packaging</small></span>
+        </div>
+        <p>Restaurant-grade packaging at wholesale rates. Trusted by independent kitchens, multi-site operators and cloud-kitchen brands.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#products">Catalogue</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="cart.html">My Cart</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Categories</h4>
+        <ul>
+          <li><a href="index.html#products">Takeaway</a></li>
+          <li><a href="index.html#products">Kraft Boxes</a></li>
+          <li><a href="index.html#products">Plastic Range</a></li>
+          <li><a href="index.html#products">Eco-Friendly</a></li>
+          <li><a href="index.html#products">Cups & Lids</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="#">[Email — to be supplied]</a></li>
+          <li><a href="#">[Phone — to be supplied]</a></li>
+          <li><a href="#">[WhatsApp — to be supplied]</a></li>
+          <li><a href="#">[Address — to be supplied]</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Gastro Pack House. All rights reserved.</span>
+      <span>Wholesale packaging · Built for kitchens.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/products.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

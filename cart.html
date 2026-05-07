@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Cart · Gastro Pack House</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<!-- ========== NAV ========== -->
+<header class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-mark">G</span>
+      <span>Gastro Pack House <small>Wholesale Packaging</small></span>
+    </a>
+    <button class="nav-burger" aria-label="Open menu" id="burger">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#products">Products</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="cart.html" class="cart-link">Cart <span class="badge" id="cart-count">0</span></a></li>
+      <li><a href="index.html#order" class="nav-cta">Order Bulk</a></li>
+    </ul>
+  </div>
+</header>
+
+<!-- ========== PAGE HEAD ========== -->
+<section class="page-head">
+  <span class="hero-eyebrow">Bulk Cart</span>
+  <h1>Your wholesale order</h1>
+  <p>Review your line-items, adjust case quantities, and submit for an indicative quote with freight.</p>
+</section>
+
+<!-- ========== CART ========== -->
+<section class="container">
+  <div class="cart-wrap">
+    <div id="cart-list" class="cart-list"></div>
+    <aside class="cart-summary" id="cart-summary"></aside>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">
+          <span class="logo-mark">G</span>
+          <span>Gastro Pack House <small>Wholesale Packaging</small></span>
+        </div>
+        <p>Restaurant-grade packaging at wholesale rates. Trusted by independent kitchens, multi-site operators and cloud-kitchen brands.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#products">Catalogue</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="cart.html">My Cart</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Categories</h4>
+        <ul>
+          <li><a href="index.html#products">Takeaway</a></li>
+          <li><a href="index.html#products">Kraft Boxes</a></li>
+          <li><a href="index.html#products">Plastic Range</a></li>
+          <li><a href="index.html#products">Eco-Friendly</a></li>
+          <li><a href="index.html#products">Cups & Lids</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="#">[Email — to be supplied]</a></li>
+          <li><a href="#">[Phone — to be supplied]</a></li>
+          <li><a href="#">[WhatsApp — to be supplied]</a></li>
+          <li><a href="#">[Address — to be supplied]</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Gastro Pack House. All rights reserved.</span>
+      <span>Wholesale packaging · Built for kitchens.</span>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script src="js/products.js"></script>
+<script src="js/script.js"></script>
+<script>
+// ============================================================
+// CART PAGE — render line-items + summary
+// ============================================================
+function renderCart() {
+  const cart = getCart();
+  const ids  = Object.keys(cart);
+  const list = document.getElementById('cart-list');
+  const sum  = document.getElementById('cart-summary');
+
+  if (ids.length === 0) {
+    list.innerHTML = `
+      <div class="empty-state">
+        <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"
+             style="opacity:.7;margin:0 auto;display:block">
+          <circle cx="9" cy="20" r="1.6"/><circle cx="17" cy="20" r="1.6"/>
+          <path d="M3 4h2l3 12h11l2-8H6"/>
+        </svg>
+        <h3>Your cart is empty</h3>
+        <p>Add line items from the catalogue to begin a quote.</p>
+        <a href="index.html#products" class="btn btn-primary">Browse Catalogue</a>
+      </div>`;
+    sum.innerHTML = '';
+    return;
+  }
+
+  // ICONS comes from script.js — re-use
+  const lines = ids.map(id => {
+    const p = PRODUCTS.find(p => p.id === +id);
+    if (!p) return '';
+    const qty = cart[id];
+    const lineTotal = (p.price * qty).toFixed(2);
+    return `
+      <div class="cart-row" data-id="${p.id}">
+        <div class="cart-thumb">${iconFor(p.cat)}</div>
+        <div>
+          <h4>${p.name}</h4>
+          <div class="meta">$${p.price.toFixed(2)}${p.unit} · MOQ ${p.moq}</div>
+        </div>
+        <div class="qty">
+          <button data-act="dec" data-id="${p.id}">−</button>
+          <span>${qty}</span>
+          <button data-act="inc" data-id="${p.id}">+</button>
+        </div>
+        <div style="text-align:right">
+          <div style="font-weight:800">$${lineTotal}</div>
+          <button class="cart-remove" data-act="rm" data-id="${p.id}">Remove</button>
+        </div>
+      </div>`;
+  }).join('');
+
+  list.innerHTML = lines;
+
+  // summary calculations
+  const subtotal = ids.reduce((s, id) => {
+    const p = PRODUCTS.find(p => p.id === +id);
+    return s + (p ? p.price * cart[id] : 0);
+  }, 0);
+  const items   = Object.values(cart).reduce((a, b) => a + b, 0);
+  const rebate  = subtotal >= 500 ? subtotal * 0.05 : 0;
+  const freight = subtotal >= 750 ? 0 : 24;
+  const total   = subtotal - rebate + freight;
+
+  sum.innerHTML = `
+    <h3>Order Summary</h3>
+    <div class="summary-row"><span>Items</span><span>${items}</span></div>
+    <div class="summary-row"><span>Subtotal</span><span>$${subtotal.toFixed(2)}</span></div>
+    <div class="summary-row"><span>Volume rebate ${rebate>0?'(5%)':''}</span><span>− $${rebate.toFixed(2)}</span></div>
+    <div class="summary-row"><span>Freight ${freight===0?'(free over $750)':''}</span><span>$${freight.toFixed(2)}</span></div>
+    <div class="summary-row total"><span>Total</span><span>$${total.toFixed(2)}</span></div>
+    <a href="#" class="btn btn-primary">Submit for Quote</a>
+    <a href="index.html#products" class="btn btn-ghost" style="margin-top:8px">Continue Browsing</a>
+  `;
+
+  // bind qty + remove buttons
+  list.querySelectorAll('[data-act]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const id  = btn.dataset.id;
+      const act = btn.dataset.act;
+      const c   = getCart();
+      if (act === 'inc') c[id] = (c[id] || 0) + 1;
+      if (act === 'dec') c[id] = Math.max(0, (c[id] || 0) - 1);
+      if (act === 'rm' || c[id] === 0) delete c[id];
+      saveCart(c);
+      updateCartBadge();
+      renderCart();
+    });
+  });
+}
+
+document.addEventListener('DOMContentLoaded', renderCart);
+</script>
+</body>
+</html>

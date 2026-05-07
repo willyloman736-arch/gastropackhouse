@@ -1,0 +1,132 @@
+// Gastro Pack House — Product Catalog
+// 101 wholesale food packaging products across 8 categories
+
+const CATEGORIES = [
+  { id: "takeaway",  name: "Takeaway",       count: 38 },
+  { id: "kraft",     name: "Kraft Boxes",    count: 18 },
+  { id: "plastic",   name: "Plastic Range",  count: 25 },
+  { id: "eco",       name: "Eco-Friendly",   count: 15 },
+  { id: "cups",      name: "Cups & Lids",    count: 2  },
+  { id: "catering",  name: "Catering Trays", count: 1  },
+  { id: "deli",      name: "Deli Supplies",  count: 1  },
+  { id: "wraps",     name: "Cling & Wraps",  count: 1  }
+];
+
+const PRODUCTS = [
+  // ───── Takeaway (38) ─────
+  { id: 1,  cat: "takeaway", name: "8oz Kraft Soup Container",        price: 0.18, unit: "/pc", stock: "In Stock", moq: "500 pcs" },
+  { id: 2,  cat: "takeaway", name: "12oz Kraft Soup Container",       price: 0.22, unit: "/pc", stock: "In Stock", moq: "500 pcs" },
+  { id: 3,  cat: "takeaway", name: "16oz Kraft Soup Container",       price: 0.26, unit: "/pc", stock: "In Stock", moq: "500 pcs" },
+  { id: 4,  cat: "takeaway", name: "26oz Rectangular Foil Tray",      price: 0.34, unit: "/pc", stock: "In Stock", moq: "250 pcs" },
+  { id: 5,  cat: "takeaway", name: "32oz Round Black Container",      price: 0.29, unit: "/pc", stock: "In Stock", moq: "300 pcs" },
+  { id: 6,  cat: "takeaway", name: "750ml Microwavable Container",    price: 0.31, unit: "/pc", stock: "In Stock", moq: "300 pcs" },
+  { id: 7,  cat: "takeaway", name: "500ml PP Container w/ Lid",       price: 0.21, unit: "/pc", stock: "In Stock", moq: "500 pcs" },
+  { id: 8,  cat: "takeaway", name: "1000ml PP Container w/ Lid",      price: 0.28, unit: "/pc", stock: "In Stock", moq: "500 pcs" },
+  { id: 9,  cat: "takeaway", name: "1500ml PP Container w/ Lid",      price: 0.36, unit: "/pc", stock: "In Stock", moq: "300 pcs" },
+  { id: 10, cat: "takeaway", name: "2000ml PP Container w/ Lid",      price: 0.42, unit: "/pc", stock: "In Stock", moq: "300 pcs" },
+  { id: 11, cat: "takeaway", name: "8oz White Paper Bowl",            price: 0.16, unit: "/pc", stock: "In Stock", moq: "500 pcs" },
+  { id: 12, cat: "takeaway", name: "12oz White Paper Bowl",           price: 0.19, unit: "/pc", stock: "In Stock", moq: "500 pcs" },
+  { id: 13, cat: "takeaway", name: "16oz White Paper Bowl",           price: 0.23, unit: "/pc", stock: "In Stock", moq: "500 pcs" },
+  { id: 14, cat: "takeaway", name: "24oz White Paper Bowl",           price: 0.28, unit: "/pc", stock: "In Stock", moq: "300 pcs" },
+  { id: 15, cat: "takeaway", name: "32oz White Paper Bowl",           price: 0.33, unit: "/pc", stock: "In Stock", moq: "300 pcs" },
+  { id: 16, cat: "takeaway", name: "3-Compartment Bento Box",         price: 0.39, unit: "/pc", stock: "In Stock", moq: "250 pcs" },
+  { id: 17, cat: "takeaway", name: "5-Compartment Meal Tray",         price: 0.47, unit: "/pc", stock: "In Stock", moq: "200 pcs" },
+  { id: 18, cat: "takeaway", name: "Sushi Tray — Small",              price: 0.14, unit: "/pc", stock: "In Stock", moq: "500 pcs" },
+  { id: 19, cat: "takeaway", name: "Sushi Tray — Medium",             price: 0.18, unit: "/pc", stock: "In Stock", moq: "500 pcs" },
+  { id: 20, cat: "takeaway", name: "Sushi Tray — Large",              price: 0.24, unit: "/pc", stock: "In Stock", moq: "500 pcs" },
+  { id: 21, cat: "takeaway", name: "Standard Burger Box",             price: 0.21, unit: "/pc", stock: "In Stock", moq: "500 pcs" },
+  { id: 22, cat: "takeaway", name: "Large Burger Box",                price: 0.26, unit: "/pc", stock: "In Stock", moq: "500 pcs" },
+  { id: 23, cat: "takeaway", name: "Hot Dog Container",               price: 0.13, unit: "/pc", stock: "In Stock", moq: "500 pcs" },
+  { id: 24, cat: "takeaway", name: "Pasta Bowl 24oz",                 price: 0.31, unit: "/pc", stock: "In Stock", moq: "300 pcs" },
+  { id: 25, cat: "takeaway", name: "Salad Bowl 32oz",                 price: 0.35, unit: "/pc", stock: "In Stock", moq: "300 pcs" },
+  { id: 26, cat: "takeaway", name: "Salad Bowl 48oz",                 price: 0.44, unit: "/pc", stock: "In Stock", moq: "200 pcs" },
+  { id: 27, cat: "takeaway", name: "Noodle Box — Small",              price: 0.17, unit: "/pc", stock: "In Stock", moq: "500 pcs" },
+  { id: 28, cat: "takeaway", name: "Noodle Box — Medium",             price: 0.21, unit: "/pc", stock: "In Stock", moq: "500 pcs" },
+  { id: 29, cat: "takeaway", name: "Noodle Box — Large",              price: 0.26, unit: "/pc", stock: "In Stock", moq: "500 pcs" },
+  { id: 30, cat: "takeaway", name: "Aluminum Foil Tray w/ Lid",       price: 0.32, unit: "/pc", stock: "In Stock", moq: "250 pcs" },
+  { id: 31, cat: "takeaway", name: "Round Black Bowl 16oz",           price: 0.22, unit: "/pc", stock: "In Stock", moq: "500 pcs" },
+  { id: 32, cat: "takeaway", name: "Round Black Bowl 24oz",           price: 0.27, unit: "/pc", stock: "In Stock", moq: "300 pcs" },
+  { id: 33, cat: "takeaway", name: "Square Black Container 24oz",     price: 0.29, unit: "/pc", stock: "In Stock", moq: "300 pcs" },
+  { id: 34, cat: "takeaway", name: "Square Black Container 32oz",     price: 0.34, unit: "/pc", stock: "In Stock", moq: "300 pcs" },
+  { id: 35, cat: "takeaway", name: "Clamshell Container 6\"",        price: 0.18, unit: "/pc", stock: "In Stock", moq: "500 pcs" },
+  { id: 36, cat: "takeaway", name: "Clamshell Container 9\"",        price: 0.24, unit: "/pc", stock: "In Stock", moq: "500 pcs" },
+  { id: 37, cat: "takeaway", name: "Hinged Lid Container 8\"",       price: 0.22, unit: "/pc", stock: "In Stock", moq: "500 pcs" },
+  { id: 38, cat: "takeaway", name: "Hinged Lid Container 10\"",      price: 0.28, unit: "/pc", stock: "In Stock", moq: "500 pcs" },
+
+  // ───── Kraft Boxes (18) ─────
+  { id: 39, cat: "kraft", name: "Kraft Pizza Box 9\"",            price: 0.39, unit: "/pc", stock: "In Stock", moq: "200 pcs" },
+  { id: 40, cat: "kraft", name: "Kraft Pizza Box 12\"",           price: 0.49, unit: "/pc", stock: "In Stock", moq: "200 pcs" },
+  { id: 41, cat: "kraft", name: "Kraft Pizza Box 14\"",           price: 0.59, unit: "/pc", stock: "In Stock", moq: "200 pcs" },
+  { id: 42, cat: "kraft", name: "Kraft Pizza Box 16\"",           price: 0.69, unit: "/pc", stock: "In Stock", moq: "200 pcs" },
+  { id: 43, cat: "kraft", name: "Kraft Lunch Box — Small",         price: 0.24, unit: "/pc", stock: "In Stock", moq: "500 pcs" },
+  { id: 44, cat: "kraft", name: "Kraft Lunch Box — Medium",        price: 0.31, unit: "/pc", stock: "In Stock", moq: "500 pcs" },
+  { id: 45, cat: "kraft", name: "Kraft Lunch Box — Large",         price: 0.38, unit: "/pc", stock: "In Stock", moq: "300 pcs" },
+  { id: 46, cat: "kraft", name: "Kraft Pastry Window Box",         price: 0.42, unit: "/pc", stock: "In Stock", moq: "200 pcs" },
+  { id: 47, cat: "kraft", name: "Kraft Sandwich Window Box",       price: 0.36, unit: "/pc", stock: "In Stock", moq: "300 pcs" },
+  { id: 48, cat: "kraft", name: "Kraft Cake Box 6\"",             price: 0.44, unit: "/pc", stock: "In Stock", moq: "200 pcs" },
+  { id: 49, cat: "kraft", name: "Kraft Cake Box 8\"",             price: 0.54, unit: "/pc", stock: "In Stock", moq: "200 pcs" },
+  { id: 50, cat: "kraft", name: "Kraft Cake Box 10\"",            price: 0.66, unit: "/pc", stock: "In Stock", moq: "150 pcs" },
+  { id: 51, cat: "kraft", name: "Kraft Donut Box (6 ct)",          price: 0.32, unit: "/pc", stock: "In Stock", moq: "200 pcs" },
+  { id: 52, cat: "kraft", name: "Kraft Donut Box (12 ct)",         price: 0.46, unit: "/pc", stock: "In Stock", moq: "150 pcs" },
+  { id: 53, cat: "kraft", name: "Kraft Sandwich Wedge",            price: 0.16, unit: "/pc", stock: "In Stock", moq: "500 pcs" },
+  { id: 54, cat: "kraft", name: "Kraft Burger Wrap",               price: 0.09, unit: "/pc", stock: "In Stock", moq: "1000 pcs" },
+  { id: 55, cat: "kraft", name: "Kraft Cookie Box",                price: 0.28, unit: "/pc", stock: "In Stock", moq: "300 pcs" },
+  { id: 56, cat: "kraft", name: "Kraft Mailer Box",                price: 0.74, unit: "/pc", stock: "In Stock", moq: "100 pcs" },
+
+  // ───── Plastic Range (25) ─────
+  { id: 57, cat: "plastic", name: "4oz Round Deli Cup",             price: 0.08, unit: "/pc", stock: "In Stock", moq: "1000 pcs" },
+  { id: 58, cat: "plastic", name: "8oz Round Deli Cup",             price: 0.11, unit: "/pc", stock: "In Stock", moq: "1000 pcs" },
+  { id: 59, cat: "plastic", name: "12oz Round Deli Cup",            price: 0.13, unit: "/pc", stock: "In Stock", moq: "500 pcs"  },
+  { id: 60, cat: "plastic", name: "16oz Round Deli Cup",            price: 0.16, unit: "/pc", stock: "In Stock", moq: "500 pcs"  },
+  { id: 61, cat: "plastic", name: "24oz Round Deli Cup",            price: 0.20, unit: "/pc", stock: "In Stock", moq: "500 pcs"  },
+  { id: 62, cat: "plastic", name: "32oz Round Deli Cup",            price: 0.24, unit: "/pc", stock: "In Stock", moq: "500 pcs"  },
+  { id: 63, cat: "plastic", name: "PET Salad Container 24oz",       price: 0.28, unit: "/pc", stock: "In Stock", moq: "300 pcs"  },
+  { id: 64, cat: "plastic", name: "PET Salad Container 32oz",       price: 0.34, unit: "/pc", stock: "In Stock", moq: "300 pcs"  },
+  { id: 65, cat: "plastic", name: "PET Cake Dome 6\"",             price: 0.39, unit: "/pc", stock: "In Stock", moq: "200 pcs"  },
+  { id: 66, cat: "plastic", name: "PET Cake Dome 8\"",             price: 0.49, unit: "/pc", stock: "In Stock", moq: "200 pcs"  },
+  { id: 67, cat: "plastic", name: "PET Macaron Box 6ct",            price: 0.42, unit: "/pc", stock: "In Stock", moq: "200 pcs"  },
+  { id: 68, cat: "plastic", name: "PET Macaron Box 12ct",           price: 0.58, unit: "/pc", stock: "In Stock", moq: "150 pcs"  },
+  { id: 69, cat: "plastic", name: "Tamper-Evident Container 8oz",   price: 0.18, unit: "/pc", stock: "In Stock", moq: "500 pcs"  },
+  { id: 70, cat: "plastic", name: "Tamper-Evident Container 16oz",  price: 0.26, unit: "/pc", stock: "In Stock", moq: "500 pcs"  },
+  { id: 71, cat: "plastic", name: "Tamper-Evident Container 32oz",  price: 0.38, unit: "/pc", stock: "In Stock", moq: "300 pcs"  },
+  { id: 72, cat: "plastic", name: "Clear Hinged Salad Box",         price: 0.32, unit: "/pc", stock: "In Stock", moq: "300 pcs"  },
+  { id: 73, cat: "plastic", name: "Clear Hinged Sandwich Box",      price: 0.27, unit: "/pc", stock: "In Stock", moq: "500 pcs"  },
+  { id: 74, cat: "plastic", name: "Microwavable PP 750ml",          price: 0.29, unit: "/pc", stock: "In Stock", moq: "300 pcs"  },
+  { id: 75, cat: "plastic", name: "Microwavable PP 1000ml",         price: 0.34, unit: "/pc", stock: "In Stock", moq: "300 pcs"  },
+  { id: 76, cat: "plastic", name: "Microwavable PP 1500ml",         price: 0.41, unit: "/pc", stock: "In Stock", moq: "300 pcs"  },
+  { id: 77, cat: "plastic", name: "Black Base Clear Lid 16oz",      price: 0.23, unit: "/pc", stock: "In Stock", moq: "500 pcs"  },
+  { id: 78, cat: "plastic", name: "Black Base Clear Lid 24oz",      price: 0.29, unit: "/pc", stock: "In Stock", moq: "300 pcs"  },
+  { id: 79, cat: "plastic", name: "Black Base Clear Lid 32oz",      price: 0.36, unit: "/pc", stock: "In Stock", moq: "300 pcs"  },
+  { id: 80, cat: "plastic", name: "PET Smoothie Cup 16oz",          price: 0.16, unit: "/pc", stock: "In Stock", moq: "500 pcs"  },
+  { id: 81, cat: "plastic", name: "PET Smoothie Cup 22oz",          price: 0.21, unit: "/pc", stock: "In Stock", moq: "500 pcs"  },
+
+  // ───── Eco-Friendly (15) ─────
+  { id: 82, cat: "eco", name: "Bagasse Plate 7\"",                price: 0.14, unit: "/pc", stock: "In Stock", moq: "500 pcs" },
+  { id: 83, cat: "eco", name: "Bagasse Plate 9\"",                price: 0.18, unit: "/pc", stock: "In Stock", moq: "500 pcs" },
+  { id: 84, cat: "eco", name: "Bagasse Bowl 16oz",                 price: 0.21, unit: "/pc", stock: "In Stock", moq: "500 pcs" },
+  { id: 85, cat: "eco", name: "Bagasse Bowl 32oz",                 price: 0.32, unit: "/pc", stock: "In Stock", moq: "300 pcs" },
+  { id: 86, cat: "eco", name: "Bagasse Clamshell 6\"",            price: 0.22, unit: "/pc", stock: "In Stock", moq: "500 pcs" },
+  { id: 87, cat: "eco", name: "Bagasse Clamshell 9\"",            price: 0.31, unit: "/pc", stock: "In Stock", moq: "300 pcs" },
+  { id: 88, cat: "eco", name: "PLA Cold Cup 12oz",                 price: 0.19, unit: "/pc", stock: "In Stock", moq: "500 pcs" },
+  { id: 89, cat: "eco", name: "PLA Cold Cup 16oz",                 price: 0.23, unit: "/pc", stock: "In Stock", moq: "500 pcs" },
+  { id: 90, cat: "eco", name: "CPLA Hot Cup Lid",                  price: 0.07, unit: "/pc", stock: "In Stock", moq: "1000 pcs" },
+  { id: 91, cat: "eco", name: "Wooden Cutlery Set",                price: 0.12, unit: "/set", stock: "In Stock", moq: "1000 sets" },
+  { id: 92, cat: "eco", name: "Bamboo Skewers (100ct)",            price: 1.40, unit: "/pack", stock: "In Stock", moq: "100 packs" },
+  { id: 93, cat: "eco", name: "Compostable Straws (Pack)",         price: 0.04, unit: "/pc", stock: "In Stock", moq: "2000 pcs" },
+  { id: 94, cat: "eco", name: "Kraft Compostable Bowl 24oz",       price: 0.28, unit: "/pc", stock: "In Stock", moq: "300 pcs" },
+  { id: 95, cat: "eco", name: "Compostable Cling Film",            price: 6.40, unit: "/roll", stock: "In Stock", moq: "10 rolls" },
+  { id: 96, cat: "eco", name: "Recycled Pulp Egg Carton",          price: 0.18, unit: "/pc", stock: "In Stock", moq: "500 pcs" },
+
+  // ───── Cups & Lids (2) ─────
+  { id: 97, cat: "cups", name: "Premium Double-Wall Cup 12oz",     price: 0.28, unit: "/pc", stock: "In Stock", moq: "500 pcs" },
+  { id: 98, cat: "cups", name: "Premium Double-Wall Cup 16oz",     price: 0.34, unit: "/pc", stock: "In Stock", moq: "500 pcs" },
+
+  // ───── Catering Trays (1) ─────
+  { id: 99, cat: "catering", name: "Aluminum Half-Size Steam Tray", price: 0.94, unit: "/pc", stock: "In Stock", moq: "100 pcs" },
+
+  // ───── Deli Supplies (1) ─────
+  { id: 100, cat: "deli", name: "Deli Sheet Paper Roll",            price: 4.20, unit: "/roll", stock: "In Stock", moq: "12 rolls" },
+
+  // ───── Cling & Wraps (1) ─────
+  { id: 101, cat: "wraps", name: "Commercial Cling Film Roll 18\"", price: 8.90, unit: "/roll", stock: "In Stock", moq: "6 rolls" }
+];
