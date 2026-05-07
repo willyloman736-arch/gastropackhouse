@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Cart · Gastro Pack House</title>
+<title>Bulk Cart · Gastro Pack House</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -16,7 +16,7 @@
   <div class="nav-inner">
     <a href="index.html" class="logo">
       <span class="logo-mark"><img src="assets/logo.jpeg" alt="Gastro Pack House"/></span>
-      <span>Gastro Pack House <small>Wholesale Packaging</small></span>
+      <span>Gastro Pack House <small>Wholesale Supply</small></span>
     </a>
     <button class="nav-burger" aria-label="Open menu" id="burger">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
@@ -26,7 +26,7 @@
       <li><a href="index.html#products">Products</a></li>
       <li><a href="blog.html">Blog</a></li>
       <li><a href="cart.html" class="cart-link">Cart <span class="badge" id="cart-count">0</span></a></li>
-      <li><a href="index.html#order" class="nav-cta">Order Bulk</a></li>
+      <li><a href="index.html#order" class="nav-cta">Request Bulk</a></li>
     </ul>
   </div>
 </header>
@@ -35,7 +35,7 @@
 <section class="page-head">
   <span class="hero-eyebrow">Bulk Cart</span>
   <h1>Your wholesale order</h1>
-  <p>Review your line-items, adjust case quantities, and submit for an indicative quote with freight.</p>
+  <p>Review your product line-items, adjust quantities, and prepare a bulk quote request.</p>
 </section>
 
 <!-- ========== CART ========== -->
@@ -53,15 +53,15 @@
       <div class="footer-brand">
         <div class="logo">
           <span class="logo-mark"><img src="assets/logo.jpeg" alt="Gastro Pack House"/></span>
-          <span>Gastro Pack House <small>Wholesale Packaging</small></span>
+          <span>Gastro Pack House <small>Wholesale Supply</small></span>
         </div>
-        <p>Restaurant-grade packaging at wholesale rates. Trusted by independent kitchens, multi-site operators and cloud-kitchen brands.</p>
+        <p>Premium wholesale catalog access for verified adult buyers, with fast quote handling and direct product pricing.</p>
       </div>
       <div>
         <h4>Quick Links</h4>
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="index.html#products">Catalogue</a></li>
+          <li><a href="index.html#products">Products</a></li>
           <li><a href="blog.html">Blog</a></li>
           <li><a href="cart.html">My Cart</a></li>
         </ul>
@@ -69,11 +69,11 @@
       <div>
         <h4>Categories</h4>
         <ul>
-          <li><a href="index.html#products">Takeaway</a></li>
-          <li><a href="index.html#products">Kraft Boxes</a></li>
-          <li><a href="index.html#products">Plastic Range</a></li>
-          <li><a href="index.html#products">Eco-Friendly</a></li>
-          <li><a href="index.html#products">Cups & Lids</a></li>
+          <li><a href="index.html#products">Lows</a></li>
+          <li><a href="index.html#products">Zaa</a></li>
+          <li><a href="index.html#products">Indoors</a></li>
+          <li><a href="index.html#products">Exotics Indoors</a></li>
+          <li><a href="index.html#products">Specialty</a></li>
         </ul>
       </div>
       <div>
@@ -81,14 +81,14 @@
         <ul>
           <li><a href="mailto:order@gastropackhouse.com">order@gastropackhouse.com</a></li>
           <li><a href="#">[Phone — to be supplied]</a></li>
-          <li><a href="#">[WhatsApp — to be supplied]</a></li>
+          <li><a href="https://t.me/Barewood" target="_blank" rel="noopener noreferrer">Telegram Wholesale</a></li>
           <li><a href="#">[Address — to be supplied]</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
       <span>© <span id="year"></span> Gastro Pack House. All rights reserved.</span>
-      <span>Wholesale packaging · Built for kitchens.</span>
+      <span>Wholesale supply · Verified 21+ buyers.</span>
     </div>
   </div>
 </footer>
@@ -116,25 +116,25 @@ function renderCart() {
           <path d="M3 4h2l3 12h11l2-8H6"/>
         </svg>
         <h3>Your cart is empty</h3>
-        <p>Add line items from the catalogue to begin a quote.</p>
-        <a href="index.html#products" class="btn btn-primary">Browse Catalogue</a>
+        <p>Add line items from the product catalog to begin a quote.</p>
+        <a href="index.html#products" class="btn btn-primary">Browse Products</a>
       </div>`;
     sum.innerHTML = '';
     return;
   }
 
-  // ICONS comes from script.js — re-use
+  // Helpers come from script.js — re-use
   const lines = ids.map(id => {
     const p = PRODUCTS.find(p => p.id === +id);
     if (!p) return '';
     const qty = cart[id];
-    const lineTotal = (p.price * qty).toFixed(2);
+    const lineTotal = p.price * qty;
     return `
       <div class="cart-row" data-id="${p.id}">
-        <div class="cart-thumb">${iconFor(p.cat)}</div>
+        <div class="cart-thumb">${productVisual(p)}</div>
         <div>
-          <h4>${p.name}</h4>
-          <div class="meta">$${p.price.toFixed(2)}${p.unit} · MOQ ${p.moq}</div>
+          <h4>${escapeHtml(p.name)}</h4>
+          <div class="meta">${formatMoney(p.price)}${escapeHtml(p.unit)} · MOQ ${escapeHtml(p.moq)}</div>
         </div>
         <div class="qty">
           <button data-act="dec" data-id="${p.id}">−</button>
@@ -142,7 +142,7 @@ function renderCart() {
           <button data-act="inc" data-id="${p.id}">+</button>
         </div>
         <div style="text-align:right">
-          <div style="font-weight:800">$${lineTotal}</div>
+          <div style="font-weight:800">${formatMoney(lineTotal)}</div>
           <button class="cart-remove" data-act="rm" data-id="${p.id}">Remove</button>
         </div>
       </div>`;
@@ -163,10 +163,10 @@ function renderCart() {
   sum.innerHTML = `
     <h3>Order Summary</h3>
     <div class="summary-row"><span>Items</span><span>${items}</span></div>
-    <div class="summary-row"><span>Subtotal</span><span>$${subtotal.toFixed(2)}</span></div>
-    <div class="summary-row"><span>Volume rebate ${rebate>0?'(5%)':''}</span><span>− $${rebate.toFixed(2)}</span></div>
-    <div class="summary-row"><span>Freight ${freight===0?'(free over $750)':''}</span><span>$${freight.toFixed(2)}</span></div>
-    <div class="summary-row total"><span>Total</span><span>$${total.toFixed(2)}</span></div>
+    <div class="summary-row"><span>Subtotal</span><span>${formatMoney(subtotal)}</span></div>
+    <div class="summary-row"><span>Volume rebate ${rebate>0?'(5%)':''}</span><span>− ${formatMoney(rebate)}</span></div>
+    <div class="summary-row"><span>Freight ${freight===0?'(free over $750)':''}</span><span>${formatMoney(freight)}</span></div>
+    <div class="summary-row total"><span>Total</span><span>${formatMoney(total)}</span></div>
     <a href="#" class="btn btn-primary">Submit for Quote</a>
     <a href="index.html#products" class="btn btn-ghost" style="margin-top:8px">Continue Browsing</a>
   `;

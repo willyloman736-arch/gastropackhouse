@@ -3,7 +3,8 @@
 // Handles: product render, category filter, cart, toast, nav
 // ============================================================
 
-const CART_KEY = 'gph_cart_v1';
+const CART_KEY = 'gph_cart_v2';
+const AGE_GATE_KEY = 'gph_age_verified_21_v1';
 
 // ---------- Cart helpers ----------
 function getCart()       { try { return JSON.parse(localStorage.getItem(CART_KEY)) || {}; } catch { return {}; } }
@@ -29,6 +30,29 @@ function toast(msg) {
   el.classList.add('show');
   clearTimeout(toastTimer);
   toastTimer = setTimeout(() => el.classList.remove('show'), 1800);
+}
+
+// ---------- Formatting helpers ----------
+function escapeHtml(value) {
+  return String(value).replace(/[&<>"']/g, char => ({
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#39;'
+  })[char]);
+}
+
+function formatMoney(value) {
+  return `$${Number(value).toLocaleString('en-US', {
+    minimumFractionDigits: Number.isInteger(value) ? 0 : 2,
+    maximumFractionDigits: 2
+  })}`;
+}
+
+function productVisual(p) {
+  if (!p.image) return iconFor(p.cat);
+  return `<img class="product-image" src="${escapeHtml(p.image)}" alt="${escapeHtml(p.name)}" loading="lazy">`;
 }
 
 // ---------- Product Icons (SVG by category) ----------
@@ -116,15 +140,15 @@ function renderProducts() {
   grid.innerHTML = list.map(p => `
     <article class="product-card" data-id="${p.id}">
       <div class="product-thumb">
-        <span class="product-stock">${p.stock}</span>
-        ${iconFor(p.cat)}
+        <span class="product-stock">${escapeHtml(p.stock)}</span>
+        ${productVisual(p)}
       </div>
       <div class="product-body">
-        <span class="product-cat">${catLabel(p.cat)}</span>
-        <h3 class="product-name">${p.name}</h3>
-        <span class="product-meta">MOQ · ${p.moq}</span>
+        <span class="product-cat">${escapeHtml(catLabel(p.cat))}</span>
+        <h3 class="product-name">${escapeHtml(p.name)}</h3>
+        <span class="product-meta">MOQ · ${escapeHtml(p.moq)}</span>
         <div class="product-foot">
-          <span class="product-price">$${p.price.toFixed(2)}<span class="unit">${p.unit}</span></span>
+          <span class="product-price">${formatMoney(p.price)}<span class="unit">${escapeHtml(p.unit)}</span></span>
           <button class="btn-add" data-add="${p.id}">
             Add
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12h14M12 5v14"/></svg>
@@ -150,6 +174,55 @@ function renderProducts() {
   });
 }
 
+// ---------- 21+ age gate ----------
+function isAgeVerified() {
+  try { return localStorage.getItem(AGE_GATE_KEY) === 'yes'; } catch { return false; }
+}
+
+function saveAgeVerified() {
+  try { localStorage.setItem(AGE_GATE_KEY, 'yes'); } catch {}
+}
+
+function bindAgeGate() {
+  if (isAgeVerified()) return;
+
+  const gate = document.createElement('div');
+  gate.className = 'age-gate';
+  gate.setAttribute('role', 'dialog');
+  gate.setAttribute('aria-modal', 'true');
+  gate.setAttribute('aria-labelledby', 'age-gate-title');
+  gate.innerHTML = `
+    <div class="age-gate-card">
+      <span class="age-gate-kicker">Age Verification</span>
+      <h2 id="age-gate-title">Are you 21 or older?</h2>
+      <p>You must confirm you are at least 21 years old to enter Gastro Pack House.</p>
+      <div class="age-gate-actions">
+        <button class="btn btn-primary" data-age-confirm>I am 21+</button>
+        <button class="btn btn-ghost" data-age-deny>Under 21</button>
+      </div>
+    </div>
+  `;
+
+  document.body.appendChild(gate);
+  document.body.classList.add('age-gate-open');
+
+  gate.querySelector('[data-age-confirm]').addEventListener('click', () => {
+    saveAgeVerified();
+    document.body.classList.remove('age-gate-open');
+    gate.remove();
+  });
+
+  gate.querySelector('[data-age-deny]').addEventListener('click', () => {
+    gate.querySelector('.age-gate-card').innerHTML = `
+      <span class="age-gate-kicker">Access Restricted</span>
+      <h2>You must be 21+</h2>
+      <p>This site is only available to visitors who confirm they are at least 21 years old.</p>
+    `;
+  });
+
+  gate.querySelector('[data-age-confirm]').focus();
+}
+
 // ---------- Mobile nav ----------
 function bindBurger() {
   const burger = document.getElementById('burger');
@@ -166,6 +239,7 @@ function setYear() {
 
 // ---------- Init ----------
 document.addEventListener('DOMContentLoaded', () => {
+  bindAgeGate();
   renderChips();
   renderProducts();
   updateCartBadge();
