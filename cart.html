@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/styles.css?v=20260507-9" />
+<link rel="stylesheet" href="css/styles.css?v=20260508-1" />
 </head>
 <body>
 
@@ -81,7 +81,7 @@
         <ul>
           <li><a href="mailto:order@gastropackhouse.com">order@gastropackhouse.com</a></li>
           <li><a href="#">[Phone — to be supplied]</a></li>
-          <li><a href="https://t.me/Barewood" target="_blank" rel="noopener noreferrer">Telegram Wholesale</a></li>
+          <li><a href="https://t.me/gastroopackhouse" target="_blank" rel="noopener noreferrer">Telegram Wholesale</a></li>
           <li><a href="#">[Address — to be supplied]</a></li>
         </ul>
       </div>
@@ -95,8 +95,8 @@
 
 <div class="toast" id="toast"></div>
 
-<script src="js/products.js?v=20260507-9"></script>
-<script src="js/script.js?v=20260507-9"></script>
+<script src="js/products.js?v=20260508-1"></script>
+<script src="js/script.js?v=20260508-1"></script>
 <script>
 // ============================================================
 // CART PAGE — render line-items + summary
@@ -167,7 +167,7 @@ function renderCart() {
     <div class="summary-row"><span>Volume rebate ${rebate>0?'(5%)':''}</span><span>− ${formatMoney(rebate)}</span></div>
     <div class="summary-row"><span>Freight ${freight===0?'(free over $750)':''}</span><span>${formatMoney(freight)}</span></div>
     <div class="summary-row total"><span>Total</span><span>${formatMoney(total)}</span></div>
-    <a href="#" class="btn btn-primary">Submit for Quote</a>
+    <a href="${buildCartOrderUrl(cart, { subtotal, rebate, freight, total, items })}" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Submit Order on Telegram</a>
     <a href="index.html#products" class="btn btn-ghost" style="margin-top:8px">Continue Browsing</a>
   `;
 

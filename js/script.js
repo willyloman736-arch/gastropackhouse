@@ -5,6 +5,7 @@
 
 const CART_KEY = 'gph_cart_v2';
 const AGE_GATE_KEY = 'gph_age_verified_21_v1';
+const TELEGRAM_ORDER_BASE = 'https://t.me/gastroopackhouse';
 
 // ---------- Cart helpers ----------
 function getCart()       { try { return JSON.parse(localStorage.getItem(CART_KEY)) || {}; } catch { return {}; } }
@@ -62,6 +63,59 @@ function productImages(p) {
 
 function categoryName(id) {
   return (CATEGORIES.find(c => c.id === id) || {}).name || '';
+}
+
+function telegramOrderUrl(message) {
+  return `${TELEGRAM_ORDER_BASE}?text=${encodeURIComponent(message)}`;
+}
+
+function generalTelegramOrderUrl() {
+  return telegramOrderUrl('Hello Gastro Pack House, I want to request a bulk order. Please send current availability.');
+}
+
+function productOrderMessage(product, quantity = 1) {
+  return [
+    'Hello Gastro Pack House, I want to order this product.',
+    '',
+    `Product: ${product.name}`,
+    `Category: ${categoryName(product.cat)}`,
+    `Quantity: ${quantity}`,
+    `Price: ${formatMoney(product.price)}${product.unit}`,
+    `MOQ: ${product.moq}`,
+    '',
+    'Please confirm availability and next steps.'
+  ].join('\n');
+}
+
+function productOrderUrl(product, quantity = 1) {
+  return telegramOrderUrl(productOrderMessage(product, quantity));
+}
+
+function buildCartOrderUrl(cart, summary = {}) {
+  const ids = Object.keys(cart);
+  if (!ids.length) return generalTelegramOrderUrl();
+
+  const lines = ids.map(id => {
+    const product = PRODUCTS.find(p => p.id === +id);
+    if (!product) return '';
+    const qty = cart[id];
+    return `- ${qty} x ${product.name} (${categoryName(product.cat)}) @ ${formatMoney(product.price)}${product.unit} = ${formatMoney(product.price * qty)}`;
+  }).filter(Boolean);
+
+  return telegramOrderUrl([
+    'Hello Gastro Pack House, I want to place this wholesale order.',
+    '',
+    'Order items:',
+    ...lines,
+    '',
+    `Items: ${summary.items ?? Object.values(cart).reduce((a, b) => a + b, 0)}`,
+    `Subtotal: ${summary.subtotal !== undefined ? formatMoney(summary.subtotal) : 'Please calculate'}`,
+    `Volume rebate: ${summary.rebate !== undefined ? formatMoney(summary.rebate) : 'Please confirm'}`,
+    `Freight: ${summary.freight !== undefined ? formatMoney(summary.freight) : 'Please confirm'}`,
+    `Estimated total: ${summary.total !== undefined ? formatMoney(summary.total) : 'Please confirm'}`,
+    '',
+    'Please confirm availability and next steps.'
+  ].join('\n'));
 }
 
 // ---------- Product Icons (SVG by category) ----------
@@ -248,7 +302,7 @@ function openProductModal(id, syncHash = true) {
         <p>Wholesale availability and pricing are ready for quote review.</p>
         <div class="product-modal-actions">
           <button class="btn btn-primary" data-modal-add="${p.id}">Add to Cart</button>
-          <a class="btn btn-ghost" href="https://t.me/Barewood" target="_blank" rel="noopener noreferrer">Telegram Wholesale</a>
+          <a class="btn btn-ghost" href="${productOrderUrl(p)}" target="_blank" rel="noopener noreferrer">Order on Telegram</a>
         </div>
       </div>
     </div>
