@@ -1103,14 +1103,15 @@ body.age-gate-open { overflow: hidden; }
    DEALS LANDING PAGE
    ============================================================ */
 .deals-page {
-  background:
-    linear-gradient(145deg, #030604 0%, #06110b 44%, #050505 100%);
+  background: #000;
 }
 .deals-page::before {
   background:
-    linear-gradient(180deg, rgba(74, 222, 128, 0.12), transparent 34%),
-    linear-gradient(120deg, rgba(42, 171, 238, 0.08), transparent 42%),
-    linear-gradient(0deg, rgba(255,255,255,0.04), transparent 58%);
+    linear-gradient(180deg, rgba(255,255,255,0.08), transparent 34%),
+    linear-gradient(0deg, rgba(255,255,255,0.035), transparent 58%);
+}
+.deals-page::after {
+  opacity: 0.34;
 }
 .deals-shell {
   min-height: 100vh;
@@ -1132,7 +1133,7 @@ body.age-gate-open { overflow: hidden; }
   height: 78px;
   border-radius: 50%;
   border: 1px solid rgba(255,255,255,0.16);
-  background: rgba(255,255,255,0.08);
+  background: #050505;
   box-shadow: 0 18px 50px rgba(0,0,0,0.45);
   overflow: hidden;
 }
@@ -1151,7 +1152,7 @@ body.age-gate-open { overflow: hidden; }
   padding: 9px 14px;
   border-radius: 999px;
   border: 1px solid rgba(255,255,255,0.11);
-  background: rgba(255,255,255,0.055);
+  background: rgba(0,0,0,0.72);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
   color: #fff;
@@ -1163,7 +1164,7 @@ body.age-gate-open { overflow: hidden; }
   padding: 30px;
   border-radius: 24px;
   border: 1px solid rgba(255,255,255,0.10);
-  background: rgba(255,255,255,0.055);
+  background: rgba(0,0,0,0.72);
   box-shadow:
     0 24px 80px rgba(0,0,0,0.52),
     inset 0 1px 0 rgba(255,255,255,0.06);
@@ -1231,12 +1232,14 @@ body.age-gate-open { overflow: hidden; }
   pointer-events: none;
 }
 .deals-action-tato {
-  background: linear-gradient(135deg, #48b37f 0%, #27734f 54%, #113a29 100%);
-  box-shadow: 0 16px 36px rgba(64,145,108,0.28);
+  border: 1px solid rgba(255,255,255,0.24);
+  background: linear-gradient(135deg, #202020 0%, #080808 54%, #000 100%);
+  box-shadow: 0 16px 36px rgba(255,255,255,0.08);
 }
 .deals-action-telegram {
-  background: linear-gradient(135deg, #2aabee 0%, #229ed9 54%, #087ab4 100%);
-  box-shadow: 0 16px 36px rgba(34,158,217,0.30);
+  border: 1px solid rgba(255,255,255,0.24);
+  background: linear-gradient(135deg, #2a2a2a 0%, #101010 54%, #000 100%);
+  box-shadow: 0 16px 36px rgba(255,255,255,0.08);
 }
 .deals-product-grid {
   display: grid;
@@ -1345,7 +1348,7 @@ body.age-gate-open { overflow: hidden; }
   border-radius: 50%;
   border: 1px solid rgba(255,255,255,0.10);
   background: rgba(255,255,255,0.055);
-  color: #74e3a4;
+  color: #fff;
 }
 .deals-trust strong {
   color: #fff;
